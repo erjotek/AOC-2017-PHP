@@ -3,6 +3,7 @@
 function part1($input)
 {
     preg_match_all('/(\d)\1+/', $input . $input[0], $ret);
+
     return array_sum(array_map(fn($l) => (strlen($l) - 1) * $l[0], $ret[0])); //1253
 }
 
@@ -23,7 +24,7 @@ function part2($input)
     */
 
     $l2 = (int)(strlen($input) / 2 - 1);
-    preg_match_all('/(\d)(?=.{'.$l2.'}\1)/', $input . substr($input, 0, $l2), $ret);
+    preg_match_all('/(\d)(?=.{' . $l2 . '}\1)/', $input . substr($input, 0, $l2), $ret);
 
     return array_sum($ret[0]); //1278
 }
