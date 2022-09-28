@@ -1,6 +1,56 @@
 <?php
 
-function mem($input, $val = false)
+
+function mem_fast($id)
+{
+    if ($id === 1) {
+        return [0, 0];
+    }
+
+    $hi = ceil(sqrt($id));
+    $hi_square = $hi ** 2;
+
+    $low = floor(sqrt($id));
+    $low_square = $low ** 2;
+
+    $edge = ($hi_square + $low_square + 1) / 2;
+
+    if ($hi % 2) { // bottom left
+        if ($hi === $low) {
+            $pos = ($low - 1) / 2;
+
+            return [$pos, $pos];
+        }
+
+        $half_low = ($low / 2);
+        if ($id < $edge) { // left
+            $x = -$half_low;
+            $y = $id - ($edge + $low_square + 1) / 2;
+        } else { // bottom
+            $x = $id - ($edge + $hi_square) / 2;
+            $y = $half_low;
+        }
+    } else { // top right
+        if ($hi === $low) {
+            $pos = -($low / 2);
+
+            return [$pos + 1, $pos];
+        }
+
+        $half_hi = $hi / 2;
+        if ($id < $edge) { // right
+            $x = $half_hi;
+            $y = ($edge + $low_square) / 2 - $id;
+        } else { // top
+            $x = ($edge + $hi_square + 1) / 2 - $id;
+            $y = -$half_hi;
+        }
+    }
+
+    return [$x, $y];
+}
+
+function mem_sum($input, $val = false)
 {
     $dirs = [[0, 1], [-1, 0], [0, -1], [1, 0]];
     $dir = 0;
@@ -56,17 +106,18 @@ function mem($input, $val = false)
         }
     }
 
-    return abs($x) + abs($y); //371
+    return [$x, $y];
 }
 
 function part1($input)
 {
-    return mem($input, false);
+    $pos = mem_fast($input);
+    return abs($pos[0]) + abs($pos[1]); //371
 }
 
 function part2($input)
 {
-    return mem($input, true);
+    return mem_sum($input, true); //369601
 }
 
 include __DIR__ . '/../template.php';
