@@ -1,6 +1,6 @@
 {
-  "name": "advent-of-code-2017-php",
-  "description": "Solutions of AOC",
+  "name": "erjotek/advent-of-code-2017-php",
+  "description": "Solutions of AOC using PHP 8.x",
   "minimum-stability": "stable",
   "license": "proprietary",
   "authors": [
@@ -10,6 +10,6 @@
     }
   ],
   "require": {
-    "php": "^8.1"
+    "php": "^8.4"
   }
 }
