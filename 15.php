@@ -46,7 +46,7 @@ function calc($input, $part2 = false): int
             $b = (($b * $bmul) % $mul);
         } while ($b % $bl !== 0);
 
-        if (decbin((string)($a % 65536)) === decbin((string)($b % 65536))) {
+        if ($a % 65536 === $b % 65536) {
             $total++;
         }
     }
