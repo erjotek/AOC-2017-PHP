@@ -2,19 +2,6 @@
 
 function input($input)
 {
-    $i2nput = <<<TEST
-set a 1
-add a 2
-mul a a
-mod a 5
-snd a
-set a 0
-rcv a
-jgz a -1
-set a 1
-jgz a -2
-TEST;
-
     $lines = explode("\n", $input);
     $lines = array_map(fn($l) => explode(' ', $l), $lines);
 
