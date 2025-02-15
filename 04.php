@@ -1,9 +1,16 @@
 <?php
 
-function part1($input)
+
+function input($input)
 {
     $input = explode("\n", $input);
 
+    return $input;
+}
+
+
+function part1($input)
+{
     return count(
         array_filter(
             $input,
@@ -14,8 +21,6 @@ function part1($input)
 
 function part2($input)
 {
-    $input = explode("\n", $input);
-
     return count(
         array_filter(
             $input,
@@ -36,4 +41,4 @@ function part2($input)
     ); //119
 }
 
-include __DIR__ . '/../template.php';
+include __DIR__ . '/template.php';

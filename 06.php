@@ -2,9 +2,15 @@
 
 $part2 = 0;
 
-function part1($input)
+function input($input)
 {
     $input = explode("\t", $input);
+
+    return $input;
+}
+
+function part1($input)
+{
     $c = count($input);
     $seen = [];
     $i = 0;
@@ -14,13 +20,13 @@ function part1($input)
         $val = $input[$key];
         $input[$key] = 0;
         while ($val) {
-            $input[++$key%$c]++;
+            $input[++$key % $c]++;
             $val--;
         }
     }
 
     global $part2;
-    $part2 =  $i - $seen[implode('-', $input)];
+    $part2 = $i - $seen[implode('-', $input)];
 
     return $i; //12841
 }
@@ -31,4 +37,4 @@ function part2($input)
     return $part2; //8038
 }
 
-include __DIR__ . '/../template.php';
+include __DIR__ . '/template.php';

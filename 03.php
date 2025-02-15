@@ -1,5 +1,21 @@
 <?php
 
+function input($input)
+{
+    return $input;
+}
+
+function part1($input)
+{
+    $pos = mem_fast($input);
+    return abs($pos[0]) + abs($pos[1]); //371
+}
+
+function part2($input)
+{
+    return mem_sum($input, true); //369601
+}
+
 
 function mem_fast($id)
 {
@@ -109,15 +125,4 @@ function mem_sum($input, $val = false)
     return [$x, $y];
 }
 
-function part1($input)
-{
-    $pos = mem_fast($input);
-    return abs($pos[0]) + abs($pos[1]); //371
-}
-
-function part2($input)
-{
-    return mem_sum($input, true); //369601
-}
-
-include __DIR__ . '/../template.php';
+include __DIR__ . '/template.php';

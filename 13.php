@@ -2,13 +2,6 @@
 
 function input($input)
 {
-    $in3put = <<<TEST
-0: 3
-1: 2
-4: 4
-6: 4
-TEST;
-
     $lines = explode("\n", $input);
     $lines = array_map(fn($l) => explode(': ', $l), $lines);
     $lines = array_column($lines, 1, 0);

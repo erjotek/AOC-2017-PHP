@@ -1,8 +1,15 @@
 <?php
 
-function part1($input)
+function input($input)
 {
     $input = explode("\n", $input);
+
+    return $input;
+}
+
+
+function part1($input)
+{
     $pos = 0;
     $i = 0;
     while (true) {
@@ -20,7 +27,6 @@ function part1($input)
 
 function part2($input)
 {
-    $input = explode("\n", $input);
     $pos = 0;
     $i = 0;
     while (true) {
@@ -37,4 +43,4 @@ function part2($input)
     return $i; //25558839
 }
 
-include __DIR__ . '/../template.php';
+include __DIR__ . '/template.php';

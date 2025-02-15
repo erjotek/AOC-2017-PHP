@@ -2,10 +2,6 @@
 
 function input($input)
 {
-    $in2put = <<<TEST
-<random characters>, 
-TEST;
-
     $lines = explode("\n", $input)[0];
 
     return $lines;

@@ -2,10 +2,6 @@
 
 function input($input)
 {
-    $inp2ut = <<<TEST
-3
-TEST;
-
     return $input;
 }
 

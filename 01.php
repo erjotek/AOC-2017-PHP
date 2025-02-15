@@ -1,5 +1,10 @@
 <?php
 
+function input($input)
+{
+    return $input;
+}
+
 function part1($input)
 {
     preg_match_all('/(\d)\1+/', $input . $input[0], $ret);
@@ -29,4 +34,4 @@ function part2($input)
     return array_sum($ret[0]); //1278
 }
 
-include __DIR__ . '/../template.php';
+include __DIR__ . '/template.php';
